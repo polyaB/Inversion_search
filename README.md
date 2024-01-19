@@ -27,6 +27,7 @@ cd Inversion_search
 mkdir example_data
 wget https://genedev.bionet.nsc.ru/ftp/by_Project/ExoC/inversion_search/data/control.mcool
 wget https://genedev.bionet.nsc.ru/ftp/by_Project/ExoC/inversion_search/data/s176_P82.mcool
+```
 Then just run the main script with required arguments.
 ```
 cd Inversion_search
