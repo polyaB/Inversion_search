@@ -33,7 +33,32 @@ Then just run the main script with required arguments (We recommend using severa
 cd Inversion_search
  python find_inversions.py -d ./test_P82/ -s ./data_example/s176_P82.mcool -c ./data_example/control.mcool -n 2 -r 1000000
 ```
-There are three required arguments: The directory for predicted data (`-d`), path to .mcool sample file (`-s`) and path to .mcool control file.
+There are three required arguments: The directory for predicted data (`-d`), path to .mcool sample file (`-s`) and path to .mcool control file (`-c`).
+
+```
+optional arguments:
+  -h, --help            show this help message and exit
+  -n NPROC, --nproc NPROC
+                        number of threads
+  -r [RESOLUTIONS [RESOLUTIONS ...]], --resolutions [RESOLUTIONS [RESOLUTIONS ...]]
+                        list of resolutions for inversion search
+  --thr_inv [THR_INV [THR_INV ...]]
+                        list of thresholds for inversion 'sweet' metric
+                        according to resolutions
+  --sweet_sizes [SWEET_SIZES [SWEET_SIZES ...]]
+                        list of sizes for 'sweet' metric according to
+                        resolutions
+  --clarify_coord       this parameter enables to clarify predicted
+                        breakpoints coordinates in 10 Kb resolution
+  --not_del_temp        not delete temporary directory
+
+required named arguments:
+  -d DIR, --dir DIR     working directory where all predictions will be saved
+  -s SAMPLE, --sample SAMPLE
+                        path to sample cool file
+  -c CONTROL, --control CONTROL
+                        path to control cool file
+```
 
 
 
