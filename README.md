@@ -36,6 +36,12 @@ cd Inversion_search
 There are three required arguments: The directory for predicted data (`-d`), path to .mcool sample file (`-s`) and path to .mcool control file (`-c`).
 
 ```
+usage: find_inversions.py [-h] -d DIR -s SAMPLE -c CONTROL [-n NPROC]
+                          [-r [RESOLUTIONS [RESOLUTIONS ...]]]
+                          [--thr_inv [THR_INV [THR_INV ...]]]
+                          [--sweet_sizes [SWEET_SIZES [SWEET_SIZES ...]]]
+                          [--clarify_coord] [--not_del_temp]
+
 optional arguments:
   -h, --help            show this help message and exit
   -n NPROC, --nproc NPROC
