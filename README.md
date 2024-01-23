@@ -22,7 +22,7 @@ pip install -r requirements.txt
 ## Usage
 In order to use Inversion_search, you need to first activate the virtual environment that you created before:
 ```
-conda activate
+mamba activate inv_search
 ```
 You can download example data for sample and control:
 ```
