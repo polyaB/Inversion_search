@@ -28,7 +28,7 @@ mkdir example_data
 wget -P ./example_data/ https://genedev.bionet.nsc.ru/ftp/by_Project/ExoC/inversion_search/data/control.mcool
 wget -P ./example_data/ https://genedev.bionet.nsc.ru/ftp/by_Project/ExoC/inversion_search/data/s176_P82.mcool
 ```
-Then just run the main script with required arguments (We recommend using several CPUs (`-n` parameter)).
+Then just run the main script with required arguments (We recommend using several CPUs (`-n` parameter), also for testing you can use only one resolution).
 ```
 cd Inversion_search
  python find_inversions.py -d ./test_P82/ -s ./data_example/s176_P82.mcool -c ./data_example/control.mcool -n 2 -r 1000000
