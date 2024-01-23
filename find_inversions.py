@@ -23,7 +23,7 @@ def parse_line(command_line):
     parser.add_argument("--thr_inv", help="list of thresholds for inversion 'sweet' metric according to resolutions", nargs='*', type=int, default=[-18, -20, -19, -15])
     parser.add_argument("--sweet_sizes", help="list of sizes for 'sweet' metric according to resolutions", nargs='*', type=float, default=[5, 10, 10, 20])
     parser.add_argument("--clarify_coord", help="this parameter enables to clarify predicted breakpoints coordinates in 10 Kb resolution", action = 'store_true')
-    parser.add_argument("--not_del_temp", help="not delete temporary directory", action='store_false')
+    parser.add_argument("--not_del_temp", help="not delete temporary directory", action='store_true')
     parser.set_defaults(not_del_temp=False, clarify_coord=False)
     args = parser.parse_args(command_line)
 
