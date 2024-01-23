@@ -3,7 +3,7 @@ This repository contains scripts for searching inversions in Exo-C data. You nee
 ## Requirements
 * python >= 3.6.10
 * cooler==0.8.11
-* numpy==1.20.1
+* numpy==1.19.4
 * pandas==1.2.4
 * scikit_learn==0.24.1
 * scipy==1.6.2
@@ -14,7 +14,10 @@ git clone https://github.com/polyaB/Inversion_search.git
 ## Installation
 You can create virtual environment with conda and install all dependies using following commands:
 ```
-conda create 
+cd Inversion_search
+mamba create --name inv_search python=3.6.10
+mamba activate inv_search
+pip install -r requirements.txt 
 ```
 ## Usage
 In order to use Inversion_search, you need to first activate the virtual environment that you created before:
