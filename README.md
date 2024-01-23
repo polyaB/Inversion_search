@@ -33,8 +33,7 @@ wget -P ./example_data/ https://genedev.bionet.nsc.ru/ftp/by_Project/ExoC/invers
 ```
 Then just run the main script with required arguments (We recommend using several CPUs (`-n` parameter), also for testing you can use only one resolution).
 ```
-cd Inversion_search
- python find_inversions.py -d ./test_P82/ -s ./data_example/s176_P82.mcool -c ./data_example/control.mcool -n 2 -r 1000000
+python find_inversions.py -d ./test_P82/ -s ./data_example/s176_P82.mcool -c ./data_example/control.mcool -n 2 -r 1000000
 ```
 There are three required arguments: The directory for predicted data (`-d`), path to .mcool sample file (`-s`) and path to .mcool control file (`-c`).
 
