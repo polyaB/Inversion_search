@@ -23,7 +23,7 @@ def parse_line(command_line):
     parser.add_argument("--thr_inv", help="list of thresholds for inversion 'sweet' metric according to resolutions", nargs='*', type=int, default=[-18, -20, -19, -15])
     parser.add_argument("--sweet_sizes", help="list of sizes for 'sweet' metric according to resolutions", nargs='*', type=float, default=[5, 10, 10, 20])
     parser.add_argument("--clarify_coord", help="this parameter enables to clarify predicted breakpoints coordinates in 10 Kb resolution", action = 'store_true')
-    parser.add_argument("--not_del_temp", help="not delete temporary directory", action='store_true')
+    parser.add_argument("--not_del_temp", help="not delete temporary directory", action='store_false')
     parser.set_defaults(not_del_temp=False, clarify_coord=False)
     args = parser.parse_args(command_line)
 
@@ -46,7 +46,7 @@ def main(command_line=None):
      thresholds,
      sweet_sizes, 
      clarify_coord,
-     del_temp) = parse_line(command_line)
+     not_del_temp) = parse_line(command_line)
 
     sweet_sizes_dict = {"1000000":"5", "250000":"10", "100000":"10", "10000":"20"}
     thresholds_dict = {"1000000":"-18", "250000":"-20", "100000":"-19", "10000":"-15"}
@@ -140,7 +140,7 @@ def main(command_line=None):
     else:
         final_inversion_data = inv_sample_data
     # Remove temp directory
-    if del_temp:
+    if not not_del_temp:
         shutil.rmtree(workdir + "/temp/")
 
     final_inversion_data.to_csv(workdir + "/inversion_prediction.txt", index=False, sep="\t")
