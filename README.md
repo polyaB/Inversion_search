@@ -4,7 +4,7 @@ This repository contains scripts for searching inversions in Exo-C data. You nee
 * python >= 3.6.10
 * cooler==0.8.11
 * numpy==1.19.4
-* pandas==1.2.4
+* pandas==1.1.4
 * scikit_learn==0.24.1
 * scipy==1.6.2
 ## Download
