@@ -6,7 +6,7 @@ This repository contains scripts for searching inversions in Exo-C data. You nee
 * numpy==1.19.4
 * pandas==1.1.4
 * scikit_learn==0.24.1
-* scipy==1.6.2
+* scipy==1.5.4
 ## Download
 ```
 git clone https://github.com/polyaB/Inversion_search.git
