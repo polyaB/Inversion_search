@@ -67,6 +67,6 @@ required named arguments:
   -c CONTROL, --control CONTROL
                         path to control cool file
 ```
-This tool works for 
+This tool works for following resolutions: 1000000, 250000, 100000, 10000 bp. It means that script search inversions using this resolution at appropriate distances which you can find in source/res_size.txt file.
 
 
