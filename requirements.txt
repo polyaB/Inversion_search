@@ -1,6 +1,6 @@
 cooler==0.8.11
 matplotlib==3.3.4
 numpy==1.19.4
-pandas==1.2.4
+pandas==1.1.4
 scikit_learn==0.24.1
 scipy==1.6.2
