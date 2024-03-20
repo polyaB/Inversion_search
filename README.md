@@ -36,7 +36,7 @@ Then just run the main script with required arguments (We recommend using severa
 python find_inversions.py -d ./test_P82/ -s ./example_data/s176_P82.mcool -c ./example_data/control.mcool -n 2 -r 1000000
 ```
 There are three required arguments: The directory for predicted data (`-d`), path to .mcool sample file (`-s`) and path to .mcool control file (`-c`).
-If you want to launch script with standard parameters, just type command with required arguments. (Pay attention that it needs about 8 GB memory hard drive memory for temporary files and 5 GB RAM for one cpu. It takes about ? hours for all resolutions for n cpu):
+If you want to launch script with standard parameters, just type command with required arguments. Pay attention that it needs about 8 GB memory hard drive memory for temporary files and 5 GB RAM for one cpu. It takes about ? hours for all resolutions for n cpu.
 ```
 python find_inversions.py -d /path_to_dir/ -s /path_to_sample.mcool -c /path_to_control.mcool
 ```
