@@ -36,7 +36,10 @@ Then just run the main script with required arguments (We recommend using severa
 python find_inversions.py -d ./test_P82/ -s ./example_data/s176_P82.mcool -c ./example_data/control.mcool -n 2 -r 1000000
 ```
 There are three required arguments: The directory for predicted data (`-d`), path to .mcool sample file (`-s`) and path to .mcool control file (`-c`).
-
+If you want to launch script with standard parameters, just type command with required arguments. (Pay attention that it needs about 8 GB memory hard drive memory for temporary files and 5 GB RAM for one cpu. It takes about ? hours for all resolutions for n cpu):
+```
+python find_inversions.py -d /path_to_dir/ -s /path_to_sample.mcool -c /path_to_control.mcool
+```
 ```
 usage: find_inversions.py [-h] -d DIR -s SAMPLE -c CONTROL [-n NPROC]
                           [-r [RESOLUTIONS [RESOLUTIONS ...]]]
@@ -67,6 +70,6 @@ required named arguments:
   -c CONTROL, --control CONTROL
                         path to control cool file
 ```
-This tool works for following resolutions: 1000000, 250000, 100000, 10000 bp. It means that script search inversions using this resolution at appropriate distances which you can find in source/res_size.txt file.
+This tool works for following resolutions: 1000000, 250000, 100000, 10000 bp. It means that script search inversions using this resolution at appropriate distances which you can find in source/res_size.txt file. Script uses all these resolutions by default. You can specify resolution by `-r` argument.
 
 
