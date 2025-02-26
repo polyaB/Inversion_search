@@ -28,9 +28,18 @@ You can download example data for sample and control:
 ```
 cd Inversion_search
 mkdir example_data
+```
+control and sample for hg19:
+```
 wget -P ./example_data/ https://genedev.bionet.nsc.ru/ftp/by_Project/ExoC/inversion_search/data/control.mcool
 wget -P ./example_data/ https://genedev.bionet.nsc.ru/ftp/by_Project/ExoC/inversion_search/data/s176_P82.mcool
 ```
+control and sample for hg38:
+```
+wget -P ./example_data/ https://genedev.bionet.nsc.ru/ftp/by_Project/ExoC/hg38_files/sup_pat.XX.exoc.mcool
+wget -P ./example_data/ https://genedev.bionet.nsc.ru/ftp/by_Project/ExoC/hg38_files/s132_P10_exoc.mcool
+```
+
 Then just run the main script with required arguments (We recommend using several CPUs (`-n` parameter), also for testing you can use only one resolution).
 ```
 python find_inversions.py -d ./test_P82/ -s ./example_data/s176_P82.mcool -c ./example_data/control.mcool -n 2 -r 1000000
