@@ -50,13 +50,15 @@ def main(command_line=None):
 
     sweet_sizes_dict = {"1000000":"5", "250000":"10", "100000":"10", "10000":"20"}
     thresholds_dict = {"1000000":"-18", "250000":"-20", "100000":"-19", "10000":"-15"}
-
+    #if user set own sweet sizes or thresholdes change dict
     if len(resolutions)  == len(sweet_sizes):
         for i, res in enumerate(resolutions):
-            sweet_sizes_dict[str(res)] = str(sweet_sizes[i])
+            sweet_sizes_dict[str(res)] = str(sweet_sizes[i])        
+    
     if len(resolutions) == len(thresholds):
         for i, res in enumerate(resolutions):
             thresholds_dict[str(res)] =  str(thresholds[i])
+    
     # Create directory for data if it doesn't exist
     if not os.path.exists(workdir):
         os.makedirs(workdir)
@@ -117,6 +119,10 @@ def main(command_line=None):
     logging.getLogger(__name__).info(
             "predict inversion breakpoints for different resolutions ")
     
+    sweet_sizes = []
+    #update sweet sizes from dict
+    for res in resolutions:
+        sweet_sizes.append(sweet_sizes_dict[str(res)])
     inv_sample_data = get_inv_coordinates(workdir, resolutions, thresholds_dict, sweet_sizes)
     # Clarify coordinates of inversions using maximum 5Kb resolution 
     
