@@ -58,7 +58,7 @@ def get_inv_coordinates(
     res_pred_datas = []
     # find breakpoints for each resolution
     for i, bin_size in enumerate(resolutions):
-        sweet_size = sweet_sizes[i]
+        sweet_size = sweet_sizes[i] 
         thr = int(threshold_dict[str(bin_size)])
         z_scores_by_chr = {}
         means_for_z_score = []
@@ -134,6 +134,7 @@ def get_inv_coordinates(
                             np.where(z_scores_by_chr[chrom] < thr)
                         ],
                         "z-score": z_scores_by_chr[chrom][z_scores_by_chr[chrom] < thr],
+                        "resolution": [bin_size] * inv_coords_on_chr.shape[0]
                     }
                 )
                 # create numpy array with inversion breakpoints
@@ -157,7 +158,6 @@ def get_inv_coordinates(
         # if some inversions were predicted at this resolutions add them to predicted dataframe
         if len(chrom_datas) > 0:
             pred_inv_data = pd.concat(chrom_datas, axis=1).T
-            pred_inv_data["resolution"] = [bin_size] * len(pred_inv_data)
             pred_inv_data["pred_inv_coord1"] = pred_inv_data["pred_inv_coord1"].apply(
                 lambda x: int(x) * bin_size
             )
@@ -195,7 +195,8 @@ def get_inv_coordinates(
                 "chrom2": data_rearr["chrom"],
                 "brp2": data_rearr["pred_inv_coord2"],
                 "type": ["inversion"] * len(data_rearr),
-                "resolution": [bin_size] * len(data_rearr)
+                "resolution": data_rearr["resolution"],
+                "z-score": data_rearr["z-score"]
             }
         )
         data_final.to_csv(out_dir + "/temp/merge_res_inversions.txt", sep="\t", index=False)
